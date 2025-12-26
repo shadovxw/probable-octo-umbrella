@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-
+import cookieParser from "cookie-parser";
 import path from "path"
 
 import authRoutes from "./routes/auth.route.js"
@@ -16,6 +16,7 @@ const __dirname = path.resolve()
 const PORT = process.env.PORT || 3000
 
 app.use(express.json())
+app.use(cookieParser());
 
 if(process.env.NODE_ENV == "production"){
     app.use(express.static(path.join(__dirname, "../frontend/dist")))
