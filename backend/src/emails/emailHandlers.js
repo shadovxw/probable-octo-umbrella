@@ -1,4 +1,4 @@
-import { resendClient } from "../lib/resend.js"
+import { resendClient, sender } from "../lib/resend.js"
 
 
 export const sendWelcomeEmail = async (email, name, clientURL) => {
@@ -53,5 +53,5 @@ export const sendWelcomeEmail = async (email, name, clientURL) => {
     console.error("Error sending welcome email:", error);
   }
 
-  res.status(200).json({ data });
+  console.log("Welcome email send successfully: ", data);
 };
