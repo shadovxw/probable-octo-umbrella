@@ -8,6 +8,8 @@ import messageRoutes from "./routes/message.route.js"
 import { connectDB } from "./lib/db.js";
 
 
+import { isSpoofedBot } from "@arcjet/inspect";
+
 dotenv.config()
 
 const app = express()
